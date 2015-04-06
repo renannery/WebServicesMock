@@ -894,3 +894,32 @@ User related resources of the **WebServices mock API V1**
             "data" : {
             }
         }
+
+## User forgot password [/v1/users/forgotPwd]
+### Forgot password [POST]
++ Request (application/json)
+
+        { "email": "moto.origamitech@origamitech.com.br"}
+
++ Response 200 (application/json)
+
+        {
+            "result" : {
+                "success" : true,   
+                "message" : "Solicitacao de reset de senha recebido"
+            },
+            "data" : {
+            }
+        }
+
++ Response 400 (application/json)
+        
+        {
+            "result" : {
+                "success" : false,   
+                "message" : "Erro no reset de senha"
+            },
+            "data" : {
+            }
+        }
+
