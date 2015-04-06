@@ -1,0 +1,882 @@
+FORMAT: 1A
+
+# motorola mock API
+User API is a service to manage users.
+
+# Group User
+User related resources of the **User API**
+
+## User Login [/users/login]
+### Login [POST]
++ Request (application/json)
+
+        { "username": "moto.isobar", "pwd": "MD5_pwD"}
+
++ Response 200 (application/json)
+
+        {
+            "result" : {
+                "success" : true,   
+                "message" : ""
+            },
+            "data" : { 
+                "id" : 1234,
+                "firstName": "Alma",
+                "lastName": "Patterson",
+                "photo": "portraits/med/women/48.jpg",
+                "gender" : 2,
+                "email" : "alma.patterson37@example.com",
+                "phone" : "+55 11 98272-1828",
+                "mainUser" : true,
+                "about" : "Hi! I'm a mototech",
+                "birthDate" : "10/10/2010",
+                "username": "moto.isobar",
+                "accessToken": "XPTOACCESS",
+                "address": "Rua Fernao Dias 88",
+                "city": "São Paulo",
+                "zipcode": "11221-000",
+                "rating": "3.5",
+                "estimatedTime": "7",
+                "workHour": "8:00 am - 5:00 pm",
+                "status": true
+            }
+        }
+
++ Response 400 (application/json)
+        
+        {
+            "result" : {
+                "success" : false,   
+                "message" : ""
+            },
+            "data" : {
+            }
+        }
+
+## User Dashboard [/users/{id}/dashboard]
+### Dashboard [GET]
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the User to perform action with. Has example value.
+
++ Response 200 (application/json)
+
+        {
+            "result" : {
+                "success" : true,   
+                "message" : ""
+            },
+            "data" : {
+                "dashboardItems": [{
+                    "id" : 1,
+                    "description" : "Accepted Requests",
+                    "count" : 9
+                },
+                {
+                    "id" : 2,
+                    "description" : "Requests",
+                    "count" : 10
+                },
+                {
+                    "id" : 3,
+                    "description" : "Opened Services",
+                    "count" : 3
+                }]
+            }
+        }
+
++ Response 400 (application/json)
+        
+        {
+            "result" : {
+                "success" : false,   
+                "message" : "Error into dashboard request"
+            },
+            "data" : {
+            }
+        }
+
+## User received requests [/users/{id}/appointments]
+### Received Requests [GET]
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the User to perform action with. Has example value.
+
++ Response 200 (application/json)
+
+        {
+            "result" : {
+                "success" : true,
+                "message" : ""
+            },
+            "data" : [
+                {
+                    "user" : {
+                        "id" : 123,
+                        "type" : 2,
+                        "typeDescription" : "client",
+                        "firstName": "Rafael",
+                        "lastName": "Garg",
+                        "photo": "sPsqQoM.jpg",
+                        "gender" : 1,
+                        "email" : "mototech@isobar.com.br",
+                        "phone" : "+55 11 98272-1828",
+                        "mainUser" : false,
+                        "about" : "Hi! I'm a moto client",
+                        "username": "moto.isobar"
+                    },
+                    "status" : "accepted",
+                    "statusId" : 1,
+                    "issue": "Problemas na Bateria",
+                    "date" : "14/03/2015 15:00",
+                    "suggestedAddress" : "5118 depaul dr",
+                    "number" : "300",
+                    "suggestedDate" : "15/03/2015 12:00",
+                    "id" : 1,
+                    "latitude" : -23.556472,
+                    "longitude" : -46.703755,
+                    "complement" : "Minha bateria parou de carregar"
+                },
+                {
+                    "user" : {
+                        "id" : 321,
+                        "type" : 2,
+                        "typeDescription" : "client",
+                        "firstName": "John",
+                        "lastName": "Cocci",
+                        "photo": "JoPjhi8.jpg",
+                        "gender" : 1,
+                        "email" : "mototech@isobar.com.br",
+                        "phone" : "+55 11 98272-1828",
+                        "mainUser" : false,
+                        "about" : "Hi! I'm a moto client",
+                        "username": "moto.isobar"
+                    },
+                    "status" : "pending",
+                    "statusId" : 2,
+                    "issue": "Problemas na tela",
+                    "date" : "14/03/2015 15:00",
+                    "suggestedAddress" : "Rua Wizard",
+                    "number" : "300",
+                    "suggestedDate" : "15/03/2015 12:00",
+                    "id" : 2,
+                    "latitude" : -23.555568,
+                    "longitude" : -46.703529,
+                    "complement" : "Minha tela esta com faixas azuis"
+                },
+                {
+                    "user" : {
+                        "id" : 456,
+                        "type" : 2,
+                        "typeDescription" : "client",
+                        "firstName": "Christian",
+                        "lastName": "Ambre",
+                        "photo": "sPsqQoM.jpg",
+                        "gender" : 1,
+                        "email" : "mototech@isobar.com.br",
+                        "phone" : "+55 11 98272-1828",
+                        "mainUser" : false,
+                        "about" : "Hi! I'm a moto client",
+                        "username": "moto.isobar"
+                    },
+                    "status" : "accepted",
+                    "statusId" : 1,
+                    "issue": "Problemas na Baaaateria",
+                    "date" : "14/03/2015 15:00",
+                    "suggestedAddress" : "t aliquam seasdm lorem et",
+                    "number" : "300",
+                    "suggestedDate" : "15/03/2015 13:00",
+                    "id" : 3,
+                    "latitude" : -23.556462,
+                    "longitude" : -46.706748,
+                    "complement" : "ALorem iasdadpsum dolor sit amet"
+                },
+                {
+                    "user" : {
+                        "id" : 654,
+                        "type" : 2,
+                        "typeDescription" : "client",
+                        "firstName": "Ronald",
+                        "lastName": "River",
+                        "photo": "JoPjhi8.jpg",
+                        "gender" : 1,
+                        "email" : "mototech@isobar.com.br",
+                        "phone" : "+55 11 98272-1828",
+                        "mainUser" : false,
+                        "about" : "Hi! I'm a moto client",
+                        "username": "moto.isobar"
+                    },
+                    "status" : "pending",
+                    "statusId" : 2,
+                    "issue": "Problemas na tela",
+                    "date" : "14/03/2015 15:00",
+                    "suggestedAddress" : "Rua Wizard",
+                    "number" : "300",
+                    "suggestedDate" : "15/03/2015 12:00",
+                    "id" : 4,
+                    "latitude" : -23.554593,
+                    "longitude" : -46.703401,
+                    "complement" : "t aliquam sem lorem et"
+                }
+            ]
+        }
+
++ Response 400 (application/json)
+        
+        {
+            "result" : {
+                "success" : false,   
+                "message" : "Error into request"
+            },
+            "data" : {
+            }
+        }
+
+## User Opened Services [/users/{id}/openedServices]
+### Opened Services [GET]
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the User to perform action with. Has example value.
+
++ Response 200 (application/json)
+
+        {
+            "result" : {
+                "success" : true,
+                "message" : ""
+            },
+            "data" : 
+                [{
+                    "number" : "WO00441331",
+                    "swWarrantyStart" : "12/12/2015",
+                    "swWarrantyEnd" : "12/12/2018",
+                    "hwWarrantyStart" : "12/12/2015",
+                    "hwWarrantyEnd" : "12/12/2018",        
+                    "typeDescription" : "client",
+                    "repairWarrantyStart": "01/05/2015",
+                    "repairWarrantyEnd": "01/05/2015",
+                    "entitlement": "XPTO",
+                    "dueDate": "15/08/2015",
+                    "user" : {
+                        "id" : 1245,
+                        "type" : 2,
+                        "typeDescription" : "client",
+                        "firstName": "Client",
+                        "lastName": "4",
+                        "photo": "JoPjhi8.jpg",
+                        "gender" : 1,
+                        "email" : "mototech@isobar.com.br",
+                        "phone" : "+55 11 98272-1828",
+                        "mainUser" : false,
+                        "about" : "Hi! I'm a moto client",
+                        "username": "moto.isobar"
+                    }
+                },
+                {
+                    "number" : "WO00441315",
+                    "swWarrantyStart" : "12/12/2015",
+                    "swWarrantyEnd" : "12/12/2018",
+                    "hwWarrantyStart" : "12/12/2015",
+                    "hwWarrantyEnd" : "12/12/2018",        
+                    "typeDescription" : "client",
+                    "repairWarrantyStart": "01/05/2015",
+                    "repairWarrantyEnd": "01/05/2015",
+                    "entitlement": "XPTO",
+                    "dueDate": "15/08/2015",
+                    "user" : {
+                        "id" : 1245,
+                        "type" : 2,
+                        "typeDescription" : "client",
+                        "firstName": "Client",
+                        "lastName": "4",
+                        "photo": "JoPjhi8.jpg",
+                        "gender" : 1,
+                        "email" : "mototech@isobar.com.br",
+                        "phone" : "+55 11 98272-1828",
+                        "mainUser" : false,
+                        "about" : "Hi! I'm a moto client",
+                        "username": "moto.isobar"
+                    }
+                },
+                {
+                    "number" : "WO00442213",
+                    "swWarrantyStart" : "12/12/2015",
+                    "swWarrantyEnd" : "12/12/2018",
+                    "hwWarrantyStart" : "12/12/2015",
+                    "hwWarrantyEnd" : "12/12/2018",        
+                    "typeDescription" : "client",
+                    "repairWarrantyStart": "01/05/2015",
+                    "repairWarrantyEnd": "01/05/2015",
+                    "entitlement": "XPTO",
+                    "dueDate": "15/08/2015",
+                    "user" : {
+                        "id" : 1245,
+                        "type" : 2,
+                        "typeDescription" : "client",
+                        "firstName": "Client",
+                        "lastName": "4",
+                        "photo": "JoPjhi8.jpg",
+                        "gender" : 1,
+                        "email" : "mototech@isobar.com.br",
+                        "phone" : "+55 11 98272-1828",
+                        "mainUser" : false,
+                        "about" : "Hi! I'm a moto client",
+                        "username": "moto.isobar"
+                    }
+                },
+                {
+                    "number" : "WO00424413",
+                    "swWarrantyStart" : "12/12/2015",
+                    "swWarrantyEnd" : "12/12/2018",
+                    "hwWarrantyStart" : "12/12/2015",
+                    "hwWarrantyEnd" : "12/12/2018",        
+                    "typeDescription" : "client",
+                    "repairWarrantyStart": "01/05/2015",
+                    "repairWarrantyEnd": "01/05/2015",
+                    "entitlement": "XPTO",
+                    "dueDate": "15/08/2015",
+                    "user" : {
+                        "id" : 1245,
+                        "type" : 2,
+                        "typeDescription" : "client",
+                        "firstName": "Client",
+                        "lastName": "4",
+                        "photo": "JoPjhi8.jpg",
+                        "gender" : 1,
+                        "email" : "mototech@isobar.com.br",
+                        "phone" : "+55 11 98272-1828",
+                        "mainUser" : false,
+                        "about" : "Hi! I'm a moto client",
+                        "username": "moto.isobar"
+                    }
+                },
+                {
+                    "number" : "WO00445413",
+                    "swWarrantyStart" : "12/12/2015",
+                    "swWarrantyEnd" : "12/12/2018",
+                    "hwWarrantyStart" : "12/12/2015",
+                    "hwWarrantyEnd" : "12/12/2018",        
+                    "typeDescription" : "client",
+                    "repairWarrantyStart": "01/05/2015",
+                    "repairWarrantyEnd": "01/05/2015",
+                    "entitlement": "XPTO",
+                    "dueDate": "15/08/2015",
+                    "user" : {
+                        "id" : 1245,
+                        "type" : 2,
+                        "typeDescription" : "client",
+                        "firstName": "Client",
+                        "lastName": "4",
+                        "photo": "JoPjhi8.jpg",
+                        "gender" : 1,
+                        "email" : "mototech@isobar.com.br",
+                        "phone" : "+55 11 98272-1828",
+                        "mainUser" : false,
+                        "about" : "Hi! I'm a moto client",
+                        "username": "moto.isobar"
+                    }
+                }]
+        }
+
++ Response 400 (application/json)
+        
+        {
+            "result" : {
+                "success" : false,   
+                "message" : "Error into request"
+            },
+            "data" : {
+            }
+        }
+
+## User forgot password [/users/forgotPwd]
+### Forgot password [POST]
++ Request (application/json)
+
+        { "email": "moto.isobar@isobar.com.br"}
+
++ Response 200 (application/json)
+
+        {
+            "result" : {
+                "success" : true,   
+                "message" : "Solicitacao de reset de senha recebido"
+            },
+            "data" : {
+            }
+        }
+
++ Response 400 (application/json)
+        
+        {
+            "result" : {
+                "success" : false,   
+                "message" : "Erro no reset de senha"
+            },
+            "data" : {
+            }
+        }
+
+
+## User Collection [/users]
+### List all Users [GET]
++ Response 200 (application/json)
+
+        [{
+          "id": 1, 
+          "name": "Moto Isobar Tech",
+          "username": "moto.isobar"
+        }, {
+          "id": 2, 
+          "name": "Moto Isobar dev",
+          "username": "moto.dev"
+        }]
+
+### Create a User [POST]
++ Request (application/json)
+
+        { "title": "Buy cheese and bread for breakfast." }
+
++ Response 201 (application/json)
+
+        { "id": 3, "title": "Buy cheese and bread for breakfast." }
+        
++ Response 400 (application/json)
+
+        { "id": 3, "title": "Buy cheese and bread for breakfast." }
+
+## User [/users/{id}]
+A single User object with all its details
+
+### Retrieve a User [GET]
++ Response 200 (application/json)
+
+    + Header
+
+            X-My-Header: The Value
+
+    + Body
+        
+            { "id": 2, "name": "Moto Isobar dev", "username": "moto.dev" }
+
+### Remove a User [DELETE]
++ Response 204
+
+# Group Moto mock
+User related resources of the **Moto mock API V1**
+
+
+## User Login V1 [/v1/users/login]
+### Login [POST]
++ Request (application/json)
+
+        { 
+            "username": "moto.isobar", 
+            "password": "xadsa", 
+            "client_id": "f6cd3459f9a39c9784b3e328f05be0f7", 
+            "grant_type": "password", 
+            "scope": "tech" 
+        }
+
++ Response 200 (application/json)
+
+        {
+            "access_token": "XPTOACCESS",
+            "scope": "tech",
+            "result" : {
+                "success" : true,
+                "comments":
+                /* optional "errorCode" : "",*/
+                /* options "errorMessage" : "" */
+            },
+            "data" : { 
+                "id" : 1234,
+                "firstName": "Alma",
+                "lastName": "Patterson",
+                "photo": "DNg1rFD.jpg",
+                "gender" : 2,
+                "email" : "alma.patterson37@example.com",
+                "phone" : "+55 11 98272-1828",
+                "mainUser" : true,
+                "about" : "Hi! I'm a mototech",
+                "birthDate" : "10/10/2010",
+                "username": "moto.isobar",
+                "access_token": "XPTOACCESS",
+                "address": "Rua Fernao Dias 88",
+                "city": "São Paulo",
+                "zipcode": "11221-000",
+                "rating": "3.5",
+                "estimatedTime": "7",
+                "workHour": "8:00 am - 5:00 pm",
+                "status": true
+            }
+        }
+
++ Response 400 (application/json)
+        
+        {
+            "result" : {
+                "success" : false,   
+                "message" : ""
+            },
+            "data" : {
+            }
+        }
+
+## User received requests [/v1/users/{id}/appointments]
+### Received Requests [GET]
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the User to perform action with. Has example value.
+
++ Response 200 (application/json)
+
+        {
+            "result" : {
+                "success" : true,
+                "message" : ""
+            },
+            "data" : [{
+                    "appointmentCode" : "1",
+                    "user" : {
+                        "id" : 121,
+                        "type" : 2,
+                        "typeDescription" : "client",
+                        "firstName": "mark",
+                        "lastName": "howard",
+                        "photo": "portraits/med/men/55.jpg",
+                        "gender" : 1,
+                        "email": "mark.howard35@example.com",
+                        "phone" : "0741-994-23",
+                        "mainUser" : false,
+                        "about" : "Hi! I'm a moto client",
+                        "username": "whiteswan74"
+                    },
+                    "device": {
+                        "model" : "MOTO X",
+                        "serialNumber" : "80528c008105b2df",
+                        "manufactureDate" : "2010-08-15",
+                        "inWarranty" : false
+                    },        
+                    "issues": [{
+                        "code": 1,
+                        "description": "Battery not charging"
+                    }],        
+                    "appointmentStatus" : "pending",
+                    "scheduling" : {
+                        "location": {
+                                "street": "6797 the grove",
+                                "city": "stoke-on-trent",
+                                "state": "humberside",
+                                "zip": "61947",
+                                "latitude": 54.060162,
+                                "longitude": -0.258041,
+                                "referencePoint" : ""
+                        },
+                        "dateTime": "2015-04-01T08:41:51+00:00Z"
+                    },
+                    "complement" : "Minha bateria parou de carregar",
+                    "distance" : ""
+                },
+                {
+                    "appointmentCode" : "2",
+                    "user" : {
+                        "id" : 124,
+                        "type" : 2,
+                        "typeDescription" : "client",
+                        "firstName": "william",
+                        "lastName": "lowe",
+                        "photo": "portraits/med/men/16.jpg",
+                        "gender" : 1,
+                        "email": "william.lowe46@example.com",
+                        "phone" : "0763-530-575",
+                        "mainUser" : false,
+                        "about" : "Hi! I'm a moto client",
+                        "username": "brownswan28"
+                    },
+                    "device": {
+                        "model" : "MOTO MAXX",
+                        "serialNumber" : "d7f6d409bc2c4968",
+                        "manufactureDate" : "2012-04-27",
+                        "inWarranty" : true
+                    },        
+                    "issues": [{
+                        "code": 2,
+                        "description": "Broken display"
+                    }],        
+                    "appointmentStatus" : "pending",
+                    "scheduling" : {
+                        "location": {
+                                "street": "4219 green lane",
+                                "city": "preston",
+                                "state": "borders",
+                                "zip": "36374",
+                                "latitude": 53.729316, 
+                                "longitude": -2.726363,
+                                "referencePoint" : ""
+                        },
+                        "dateTime": "2015-04-01T08:41:51+00:00Z"
+                    },
+                    "complement" : "Minha bateria parou de carregar",
+                    "distance" : ""
+                },
+                {
+                    "appointmentCode" : "3",
+                    "user" : {
+                        "id" : 123,
+                        "type" : 2,
+                        "typeDescription" : "client",
+                        "firstName": "alex",
+                        "lastName": "lewis",
+                        "photo": "portraits/med/men/90.jpg",
+                        "gender" : 1,
+                        "email": "alex.lewis63@example.com",
+                        "phone" : "(690)-934-4967",
+                        "mainUser" : false,
+                        "about" : "Hi! I'm a moto client",
+                        "username": "tinyelephant874"
+                    },
+                    "device": {
+                        "model" : "MOTO E",
+                        "serialNumber" : "7df410b9bd8f9a17",
+                        "manufactureDate" : "2014-03-05",
+                        "inWarranty" : false
+                    },        
+                    "issues": [{
+                        "code": 3,
+                        "description": "Speaker out of order"
+                    }],        
+                    "appointmentStatus" : "accepted",
+                    "scheduling" : {
+                        "location": {
+                               "street": "6377 hamilton ave",
+                                "city": "allen",
+                                "state": "arkansas",
+                                "zip": "10196",
+                                "latitude": 60.729316, 
+                                "longitude": -2.726363,
+                                "referencePoint" : ""
+                        },
+                        "dateTime": "2015-04-01T08:41:51+00:00Z"
+                    },
+                    "complement" : "Minha bateria parou de carregar",
+                    "distance" : ""
+                },
+                {
+                    "appointmentCode" : "4",
+                    "user" : {
+                        "id" : 125,
+                        "type" : 2,
+                        "typeDescription" : "client",
+                        "firstName": "Rafael",
+                        "lastName": "Garg",
+                        "photo": "portraits/med/men/68.jpg",
+                        "gender" : 1,
+                        "email" : "mototech@isobar.com.br",
+                        "phone" : "+55 11 98272-1828",
+                        "mainUser" : false,
+                        "about" : "Hi! I'm a moto client",
+                        "username": "moto.isobar"
+                    },
+                    "device": {
+                        "model" : "MOTO X",
+                        "serialNumber" : "XPTOABC1020",
+                        "manufactureDate" : "2010-08-15",
+                        "inWarranty" : true
+                    },        
+                    "issues": [{
+                        "code": 1,
+                        "description": "Battery not charging"
+                    }],        
+                    "appointmentStatus" : "pending",
+                    "scheduling" : {
+                        "location": {
+                                "street": "8705 school lane",
+                                "city": "city of london",
+                                "state": "kent",
+                                "zip": "38935",
+                                "latitude": 80.729316, 
+                                "longitude": -5.726363,
+                                "referencePoint" : ""
+                        },
+                        "dateTime": "2015-04-01T08:41:51+00:00Z"
+                    },
+                    "complement" : "Minha bateria parou de carregar",
+                    "distance" : ""
+                },
+                {
+                    "appointmentCode" : "5",
+                    "user" : {
+                        "id" : 126,
+                        "type" : 2,
+                        "typeDescription" : "client",
+                        "firstName": "brooke",
+                        "lastName": "lord",
+                        "photo": "portraits/med/women/23.jpg",
+                        "gender" : 1,
+                        "email": "brooke.lord30@example.com",
+                        "phone" : "+55 11 98272-1828",
+                        "mainUser" : false,
+                        "about" : "Hi! I'm a moto client",
+                        "username": "beautifulpeacock554"
+                    },
+                    "device": {
+                        "model" : "MOTO G",
+                        "serialNumber" : "721178cc25573580",
+                        "manufactureDate" : "2014-07-03",
+                        "inWarranty" : false
+                    },        
+                    "issues": [{
+                        "code": 1,
+                        "description": "Battery not charging"
+                    }],        
+                    "appointmentStatus" : "accepted",
+                    "scheduling" : {
+                        "location": {
+                                "street": "5442 park avenue",
+                                "city": "kingston upon hull",
+                                "state": "berkshire",
+                                "zip": "94183",
+                                "latitude": 46.729316, 
+                                "longitude": -10.726363,
+                                "referencePoint" : ""
+                        },
+                        "dateTime": "2015-04-01T08:41:51+00:00Z"
+                    },
+                    "complement" : "Minha bateria parou de carregar",
+                    "distance" : ""
+                },
+                {
+                    "appointmentCode" : "6",
+                    "user" : {
+                        "id" : 127,
+                        "type" : 2,
+                        "typeDescription" : "client",
+                        "firstName": "maureen",
+                        "lastName": "fowler",
+                        "photo": "portraits/med/women/62.jpg",
+                        "gender" : 1,
+                        "email": "maureen.fowler98@example.com",
+                        "phone": "(827)-257-9630",
+                        "mainUser" : false,
+                        "about" : "Hi! I'm a moto client",
+                        "username": "purplekoala64"
+                    },
+                    "device": {
+                        "model" : "MOTO G",
+                        "serialNumber" : "721178cc25573580",
+                        "manufactureDate" : "2014-07-03",
+                        "inWarranty" : false
+                    },        
+                    "issues": [{
+                        "code": 3,
+                        "description": "Speaker out of order"
+                    }],        
+                    "appointmentStatus" : "accepted",
+                    "scheduling" : {
+                        "location": {
+                                "street": "3300 miller ave",
+                                "city": "lexington",
+                                "state": "north dakota",
+                                "zip": "33014",
+                                "latitude": 26.729316, 
+                                "longitude": -46.726363,
+                                "referencePoint" : ""
+                        },
+                        "dateTime": "2015-04-01T08:41:51+00:00Z"
+                    },
+                    "complement" : "Minha bateria parou de carregar",
+                    "distance" : ""
+                },
+                {
+                    "appointmentCode" : "7",
+                    "user" : {
+                        "id" : 128,
+                        "type" : 2,
+                        "typeDescription" : "client",
+                        "firstName": "gordon",
+                        "lastName": "lord",
+                        "photo": "portraits/med/men/17.jpg",
+                        "gender" : 1,
+                        "email": "gordon.lord87@example.com",
+                        "phone": "(827)-257-9630",
+                        "mainUser" : false,
+                        "about" : "Hi! I'm a moto client",
+                        "username": "orangefrog345"
+                    },
+                    "device": {
+                        "model" : "MOTO X 2nd Gen",
+                        "serialNumber" : "721178cc25573580",
+                        "manufactureDate" : "2014-07-03",
+                        "inWarranty" : false
+                    },        
+                    "issues": [{
+                        "code": 1,
+                        "description": "Battery not charging"
+                    }],        
+                    "appointmentStatus" : "accepted",
+                    "scheduling" : {
+                        "location": {
+                                "street": "9894 west street",
+                                "city": "chichester",
+                                "state": "isle of wight",
+                                "zip": "81898",
+                                "latitude": 55.729316, 
+                                "longitude": -3.726363,
+                                "referencePoint" : ""
+                        },
+                        "dateTime": "2015-04-01T08:41:51+00:00Z"
+                    },
+                    "complement" : "Minha bateria parou de carregar",
+                    "distance" : ""
+                },
+                {
+                    "appointmentCode" : "8",
+                    "user" : {
+                        "id" : 129,
+                        "type" : 2,
+                        "typeDescription" : "client",
+                        "firstName": "alice",
+                        "lastName": "simmmons",
+                        "photo": "portraits/med/women/33.jpg",
+                        "gender" : 1,
+                        "email": "alice.simmmons85@example.com",
+                        "phone": "(827)-257-9630",
+                        "mainUser" : false,
+                        "about" : "Hi! I'm a moto client",
+                        "username": "orangefrog345"
+                    },
+                    "device": {
+                        "model" : "MOTO X 2nd Gen",
+                        "serialNumber" : "721178cc25573580",
+                        "manufactureDate" : "2014-07-03",
+                        "inWarranty" : false
+                    },        
+                    "issues": [{
+                        "code": 1,
+                        "description": "Battery not charging"
+                    }],        
+                    "appointmentStatus" : "accepted",
+                    "scheduling" : {
+                        "location": {
+                                "street": "9230 alexander road",
+                                "city": "leicester",
+                                "state": "cornwall",
+                                "zip": "47789",
+                                "latitude": 43.729316, 
+                                "longitude": -1.726363,
+                                "referencePoint" : ""
+                        },
+                        "dateTime": "2015-04-01T08:41:51+00:00Z"
+                    },
+                    "complement" : "Minha bateria parou de carregar",
+                    "distance" : ""
+                }]
+        }
+
++ Response 400 (application/json)
+        
+        {
+            "result" : {
+                "success" : false,   
+                "message" : "Error into request"
+            },
+            "data" : {
+            }
+        }
