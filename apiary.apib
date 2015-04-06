@@ -864,3 +864,33 @@ User related resources of the **WebServices mock API V1**
             "data" : {
             }
         }
+
+## User Dashboard [/v1/users/{id}/dashboard]
+### Dashboard [GET]
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the User to perform action with. Has example value.
+
++ Response 200 (application/json)
+
+        {
+            "result" : {
+                "success" : true,   
+                "message" : ""
+            },
+            "data" : {
+                "accepted": 9,
+                "pending": 11,
+                "open": 2
+            }
+        }
+
++ Response 400 (application/json)
+        
+        {
+            "result" : {
+                "success" : false,   
+                "message" : "Error into dashboard request"
+            },
+            "data" : {
+            }
+        }
