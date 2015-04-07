@@ -931,3 +931,82 @@ User related resources of the **WebServices mock API V1**
             }
         }
 
+## User received requests [/v1/users/{id}/appointments{?lat}{?lng}{?distance}]
+### Received Requests [GET]
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the User to perform action with. Has example value.
+    + lat (required, float, `-23.5630037`) ... Value of the user latitude . Has example value.
+    + lng (required, float, ` -46.6864347`) ... Value of the user longitude . Has example value.
+    + distance (required, number, `10`) ... The distance of the . Has example value.
++ Response 200 (application/json)
+
+        {
+            "result" : {
+                "success" : true,
+                "message" : ""
+            },
+            "data" : [{
+                    "appointmentCode" : "1",
+                    "user" : {
+                        "id" : 121,
+                        "type" : 2,
+                        "typeDescription" : "client",
+                        "firstName": "mark",
+                        "lastName": "howard",
+                        "photo": "portraits/med/men/55.jpg",
+                        "gender" : 1,
+                        "email": "mark.howard35@example.com",
+                        "phone" : "0741-994-23",
+                        "mainUser" : false,
+                        "about" : "Hi! I'm a moto client",
+                        "username": "whiteswan74"
+                    },
+                    "device": {
+                        "model" : "MOTO X",
+                        "serialNumber" : "80528c008105b2df",
+                        "manufactureDate" : "2010-08-15",
+                        "inWarranty" : false
+                    },        
+                    "issues": [{
+                        "code": 1,
+                        "description": "Battery not charging"
+                    },
+                    {
+                        "code": 2,
+                        "description": "Broken display"
+                    },
+                    {
+                        "code": 3,
+                        "description": "Speaker out of order"
+                    }],        
+                    "appointmentStatus" : "pending",
+                    "scheduling" : {
+                        "location": {
+                                "street": "6797 the grove",
+                                "city": "stoke-on-trent",
+                                "state": "humberside",
+                                "zip": "61947",
+                                "latitude": -23.5620037,
+                                "longitude":  -46.6814347,
+                                "referencePoint" : ""
+                        },
+                        "dateTime": "2015-04-01T08:41:51+00:00Z"
+                    },
+                    "complement" : "Minha bateria parou de carregar",
+                    "distance" : ""
+                }
+            ]
+        }
+
++ Response 400 (application/json)
+        
+        {
+            "result" : {
+                "success" : false,   
+                "message" : "Error into request"
+            },
+            "data" : {
+            }
+        }
+
+
