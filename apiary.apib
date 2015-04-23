@@ -1051,4 +1051,249 @@ User related resources of the **WebServices mock API V1**
             }
         }
 
+## User Opened Services [/v1/users/{id}/pastServices]
+### Opened Services [GET]
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the User to perform action with. Has example value.
+
++ Response 200 (application/json)
+
+        {
+            "result" : {
+                "success" : true,
+                "message" : ""
+            },
+            "data" : 
+                [{
+                    "number" : "WO00441331",
+                    "swWarrantyStart" : "12/12/2015",
+                    "swWarrantyEnd" : "12/12/2018",
+                    "hwWarrantyStart" : "12/12/2015",
+                    "hwWarrantyEnd" : "12/12/2018",        
+                    "typeDescription" : "client",
+                    "repairWarrantyStart": "01/05/2015",
+                    "repairWarrantyEnd": "01/05/2015",
+                    "entitlement": "XPTO",
+                    "dueDate": "15/08/2015",
+                    "user" : {
+                        "id" : 1245,
+                        "type" : 2,
+                        "typeDescription" : "client",
+                        "firstName": "Client",
+                        "lastName": "4",
+                        "photo": "JoPjhi8.jpg",
+                        "gender" : 1,
+                        "email" : "mototech@origamitech.com.br",
+                        "phone" : "+55 11 98272-1828",
+                        "mainUser" : false,
+                        "about" : "Hi! I'm a moto client",
+                        "username": "moto.origamitech"
+                    },
+                    "device": {
+                        "model" : "MOTO X",
+                        "serialNumber" : "80528c008105b2df",
+                        "manufactureDate" : "2010-08-15",
+                        "inWarranty" : false
+                    },        
+                    "issues": [{
+                        "code": 1,
+                        "description": "Battery not charging"
+                    },
+                    {
+                        "code": 2,
+                        "description": "Broken display"
+                    },
+                    {
+                        "code": 3,
+                        "description": "Speaker out of order"
+                    }]
+                },
+                {
+                    "number" : "WO00441315",
+                    "swWarrantyStart" : "12/12/2015",
+                    "swWarrantyEnd" : "12/12/2018",
+                    "hwWarrantyStart" : "12/12/2015",
+                    "hwWarrantyEnd" : "12/12/2018",        
+                    "typeDescription" : "client",
+                    "repairWarrantyStart": "01/05/2015",
+                    "repairWarrantyEnd": "01/05/2015",
+                    "entitlement": "XPTO",
+                    "dueDate": "15/08/2015",
+                    "user" : {
+                        "id" : 1245,
+                        "type" : 2,
+                        "typeDescription" : "client",
+                        "firstName": "Client",
+                        "lastName": "4",
+                        "photo": "JoPjhi8.jpg",
+                        "gender" : 1,
+                        "email" : "mototech@origamitech.com.br",
+                        "phone" : "+55 11 98272-1828",
+                        "mainUser" : false,
+                        "about" : "Hi! I'm a moto client",
+                        "username": "moto.origamitech"
+                    },
+                    "device": {
+                        "model" : "MOTO X",
+                        "serialNumber" : "80528c008105b2df",
+                        "manufactureDate" : "2010-08-15",
+                        "inWarranty" : false
+                    },        
+                    "issues": [{
+                        "code": 1,
+                        "description": "Battery not charging"
+                    },
+                    {
+                        "code": 2,
+                        "description": "Broken display"
+                    },
+                    {
+                        "code": 3,
+                        "description": "Speaker out of order"
+                    }]
+                },
+                {
+                    "number" : "WO00442213",
+                    "swWarrantyStart" : "12/12/2015",
+                    "swWarrantyEnd" : "12/12/2018",
+                    "hwWarrantyStart" : "12/12/2015",
+                    "hwWarrantyEnd" : "12/12/2018",        
+                    "typeDescription" : "client",
+                    "repairWarrantyStart": "01/05/2015",
+                    "repairWarrantyEnd": "01/05/2015",
+                    "entitlement": "XPTO",
+                    "dueDate": "15/08/2015",
+                    "user" : {
+                        "id" : 1245,
+                        "type" : 2,
+                        "typeDescription" : "client",
+                        "firstName": "Client",
+                        "lastName": "4",
+                        "photo": "JoPjhi8.jpg",
+                        "gender" : 1,
+                        "email" : "mototech@origamitech.com.br",
+                        "phone" : "+55 11 98272-1828",
+                        "mainUser" : false,
+                        "about" : "Hi! I'm a moto client",
+                        "username": "moto.origamitech"
+                    },
+                    "device": {
+                        "model" : "MOTO X",
+                        "serialNumber" : "80528c008105b2df",
+                        "manufactureDate" : "2010-08-15",
+                        "inWarranty" : false
+                    },        
+                    "issues": [{
+                        "code": 1,
+                        "description": "Battery not charging"
+                    },
+                    {
+                        "code": 2,
+                        "description": "Broken display"
+                    },
+                    {
+                        "code": 3,
+                        "description": "Speaker out of order"
+                    }]
+                },
+                {
+                    "number" : "WO004244113",
+                    "swWarrantyStart" : "12/12/2015",
+                    "swWarrantyEnd" : "12/12/2018",
+                    "hwWarrantyStart" : "12/12/2015",
+                    "hwWarrantyEnd" : "12/12/2018",        
+                    "typeDescription" : "client",
+                    "repairWarrantyStart": "01/05/2015",
+                    "repairWarrantyEnd": "01/05/2015",
+                    "entitlement": "XPTO",
+                    "dueDate": "15/08/2015",
+                    "user" : {
+                        "id" : 1245,
+                        "type" : 2,
+                        "typeDescription" : "client",
+                        "firstName": "Client",
+                        "lastName": "4",
+                        "photo": "JoPjhi8.jpg",
+                        "gender" : 1,
+                        "email" : "mototech@origamitech.com.br",
+                        "phone" : "+55 11 98272-1828",
+                        "mainUser" : false,
+                        "about" : "Hi! I'm a moto client",
+                        "username": "moto.origamitech"
+                    },
+                    "device": {
+                        "model" : "MOTO X",
+                        "serialNumber" : "80528c008105b2df",
+                        "manufactureDate" : "2010-08-15",
+                        "inWarranty" : false
+                    },        
+                    "issues": [{
+                        "code": 1,
+                        "description": "Battery not charging"
+                    },
+                    {
+                        "code": 2,
+                        "description": "Broken display"
+                    },
+                    {
+                        "code": 3,
+                        "description": "Speaker out of order"
+                    }]
+                },
+                {
+                    "number" : "WO0204425413",
+                    "swWarrantyStart" : "12/12/2015",
+                    "swWarrantyEnd" : "12/12/2018",
+                    "hwWarrantyStart" : "12/12/2015",
+                    "hwWarrantyEnd" : "12/12/2018",        
+                    "typeDescription" : "client",
+                    "repairWarrantyStart": "01/05/2015",
+                    "repairWarrantyEnd": "01/05/2015",
+                    "entitlement": "XPTO",
+                    "dueDate": "15/08/2015",
+                    "user" : {
+                        "id" : 1245,
+                        "type" : 2,
+                        "typeDescription" : "client",
+                        "firstName": "Client",
+                        "lastName": "4",
+                        "photo": "JoPjhi8.jpg",
+                        "gender" : 1,
+                        "email" : "mototech@origamitech.com.br",
+                        "phone" : "+55 11 98272-1828",
+                        "mainUser" : false,
+                        "about" : "Hi! I'm a moto client",
+                        "username": "moto.origamitech"
+                    },
+                    "device": {
+                        "model" : "MOTO X",
+                        "serialNumber" : "80528c008105b2df",
+                        "manufactureDate" : "2010-08-15",
+                        "inWarranty" : false
+                    },        
+                    "issues": [{
+                        "code": 1,
+                        "description": "Battery not charging"
+                    },
+                    {
+                        "code": 2,
+                        "description": "Broken display"
+                    },
+                    {
+                        "code": 3,
+                        "description": "Speaker out of order"
+                    }]
+                }]
+        }
+
++ Response 400 (application/json)
+        
+        {
+            "result" : {
+                "success" : false,   
+                "message" : "Error into request"
+            },
+            "data" : {
+            }
+        }
 
