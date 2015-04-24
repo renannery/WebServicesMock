@@ -1302,3 +1302,255 @@ User related resources of the **WebServices mock API V1**
             }
         }
 
+## User Past Services [/v1/users/{id}/pastServices]
+### Past Services [GET]
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the User to perform action with. Has example value.
+
++ Response 200 (application/json)
+
+        {
+            "result" : {
+                "success" : true,
+                "message" : ""
+            },
+            "data" : 
+                [{
+                    "number" : "WO00441331",
+                    "swWarrantyStart" : "2014-04-01T08:41:51+00:00Z",
+                    "swWarrantyEnd" : "2014-05-01T08:41:51+00:00Z",
+                    "hwWarrantyStart" : "2014-04-01T08:41:51+00:00Z",
+                    "hwWarrantyEnd" : "2014-07-01T08:41:51+00:00Z",        
+                    "typeDescription" : "client",
+                    "repairWarrantyStart": "2014-06-01T08:41:51+00:00Z",
+                    "repairWarrantyEnd": "2014-07-01T08:41:51+00:00Z",
+                    "entitlement": "XPTO",
+                    "dueDate": "2015-04-25T08:41:51+00:00Z",
+                    "statusDescription" : "Waiting parts",
+                    "user" : {
+                        "id" : 9871,
+                        "type" : 2,
+                        "typeDescription" : "client",
+                        "firstName": "Vicent",
+                        "lastName": "Matt",
+                        "photo": "portraits/med/men/53.jpg",
+                        "gender" : 1,
+                        "email" : "mototech@origamitech.com.br",
+                        "phone" : "+55 11 98272-1828",
+                        "mainUser" : false,
+                        "about" : "Hi! I'm a moto client",
+                        "username": "moto.origamitech"
+                    },
+                    "device": {
+                        "model" : "MOTO X",
+                        "serialNumber" : "80528c008105b2df",
+                        "manufactureDate" : "2010-08-15",
+                        "inWarranty" : false
+                    },        
+                    "issues": [{
+                        "code": 1,
+                        "description": "Battery not charging"
+                    },
+                    {
+                        "code": 2,
+                        "description": "Broken display"
+                    },
+                    {
+                        "code": 3,
+                        "description": "Speaker out of order"
+                    }]
+                },
+                {
+                    "number" : "WO00441315",
+                    "swWarrantyStart" : "2014-01-01T08:41:51+00:00Z",
+                    "swWarrantyEnd" : "2014-02-01T08:41:51+00:00Z",
+                    "hwWarrantyStart" : "2014-01-01T08:41:51+00:00Z",
+                    "hwWarrantyEnd" : "2014-02-01T08:41:51+00:00Z",
+                    "repairWarrantyStart": "2014-03-01T08:41:51+00:00Z",
+                    "repairWarrantyEnd": "2014-04-01T08:41:51+00:00Z",
+                    "dueDate": "2015-04-25T08:41:51+00:00Z",
+                    "typeDescription" : "client",
+                    "entitlement": "XPTO",
+                    "statusDescription" : "Waiting return",
+                    "user" : {
+                        "id" : 9872,
+                        "type" : 2,
+                        "typeDescription" : "client",
+                        "firstName": "Rich",
+                        "lastName": "Snyder",
+                        "photo": "portraits/med/men/24.jpg",
+                        "gender" : 1,
+                        "email" : "mototech@origamitech.com.br",
+                        "phone" : "+55 11 98272-1828",
+                        "mainUser" : false,
+                        "about" : "Hi! I'm a moto client",
+                        "username": "moto.origamitech"
+                    },
+                    "device": {
+                        "model" : "MOTO E 2nd Generation",
+                        "serialNumber" : "721178cc25573580",
+                        "manufactureDate" : "2010-08-15",
+                        "inWarranty" : false
+                    },        
+                    "issues": [{
+                        "code": 1,
+                        "description": "Battery not charging"
+                    },
+                    {
+                        "code": 2,
+                        "description": "Broken display"
+                    },
+                    {
+                        "code": 3,
+                        "description": "Speaker out of order"
+                    }]
+                },
+                {
+                    "number" : "WO00442213",
+                    "swWarrantyStart" : "2014-01-01T08:41:51+00:00Z",
+                    "swWarrantyEnd" : "2014-02-01T08:41:51+00:00Z",
+                    "hwWarrantyStart" : "2014-01-01T08:41:51+00:00Z",
+                    "hwWarrantyEnd" : "2014-02-01T08:41:51+00:00Z",
+                    "repairWarrantyStart": "2014-03-01T08:41:51+00:00Z",
+                    "repairWarrantyEnd": "2014-04-01T08:41:51+00:00Z",
+                    "dueDate": "2015-04-26T08:41:51+00:00Z",
+                    "typeDescription" : "client",
+                    "entitlement": "XPTO",
+                    "statusDescription" : "Scheduled",
+                    "user" : {
+                        "id" : 9873,
+                        "type" : 2,
+                        "typeDescription" : "client",
+                        "firstName": "Roberto",
+                        "lastName": "Fergoso",
+                        "photo": "portraits/med/men/90.jpg",
+                        "gender" : 1,
+                        "email" : "mototech@origamitech.com.br",
+                        "phone" : "+55 11 98272-1828",
+                        "mainUser" : false,
+                        "about" : "Hi! I'm a moto client",
+                        "username": "moto.origamitech"
+                    },
+                    "device": {
+                        "model" : "MOTO G",
+                        "serialNumber" : "555667567",
+                        "manufactureDate" : "2010-08-15",
+                        "inWarranty" : false
+                    },        
+                    "issues": [{
+                        "code": 1,
+                        "description": "Battery not charging"
+                    },
+                    {
+                        "code": 2,
+                        "description": "Broken display"
+                    },
+                    {
+                        "code": 3,
+                        "description": "Speaker out of order"
+                    }]
+                },
+                {
+                    "number" : "WO004244113",
+                    "swWarrantyStart" : "2014-01-01T08:41:51+00:00Z",
+                    "swWarrantyEnd" : "2014-02-01T08:41:51+00:00Z",
+                    "hwWarrantyStart" : "2014-01-01T08:41:51+00:00Z",
+                    "hwWarrantyEnd" : "2014-02-01T08:41:51+00:00Z",
+                    "repairWarrantyStart": "2014-03-01T08:41:51+00:00Z",
+                    "repairWarrantyEnd": "2014-04-01T08:41:51+00:00Z",
+                    "dueDate": "2014-12-01T08:41:51+00:00Z",      
+                    "typeDescription" : "client",
+                    "entitlement": "XPTO",
+                    "statusDescription" : "Scheduled",
+                    "user" : {
+                        "id" : 9874,
+                        "type" : 2,
+                        "typeDescription" : "client",
+                        "firstName": "Dylan",
+                        "lastName": "Long",
+                        "photo": "portraits/med/men/85.jpg",
+                        "gender" : 1,
+                        "email" : "mototech@origamitech.com.br",
+                        "phone" : "+55 11 98272-1828",
+                        "mainUser" : false,
+                        "about" : "Hi! I'm a moto client",
+                        "username": "moto.origamitech"
+                    },
+                    "device": {
+                        "model" : "MOTO MAXX",
+                        "serialNumber" : "d7f6d409bc2c4968",
+                        "manufactureDate" : "2010-08-15",
+                        "inWarranty" : false
+                    },        
+                    "issues": [{
+                        "code": 1,
+                        "description": "Battery not charging"
+                    },
+                    {
+                        "code": 2,
+                        "description": "Broken display"
+                    },
+                    {
+                        "code": 3,
+                        "description": "Speaker out of order"
+                    }]
+                },
+                {
+                    "number" : "WO0204425413",
+                    "swWarrantyStart" : "2014-01-01T08:41:51+00:00Z",
+                    "swWarrantyEnd" : "2014-02-01T08:41:51+00:00Z",
+                    "hwWarrantyStart" : "2014-01-01T08:41:51+00:00Z",
+                    "hwWarrantyEnd" : "2014-02-01T08:41:51+00:00Z",
+                    "repairWarrantyStart": "2014-03-01T08:41:51+00:00Z",
+                    "repairWarrantyEnd": "2014-04-01T08:41:51+00:00Z",
+                    "dueDate": "2014-12-01T08:41:51+00:00Z",
+                    "typeDescription" : "client",
+                    "entitlement": "XPTO",
+                    "statusDescription" : "Scheduled",
+                    "user" : {
+                        "id" : 9875,
+                        "type" : 2,
+                        "typeDescription" : "client",
+                        "firstName": "Abbie",
+                        "lastName": "Lane",
+                        "photo": "portraits/med/women/84.jpg",
+                        "gender" : 1,
+                        "email" : "mototech@origamitech.com.br",
+                        "phone" : "+55 11 98272-1828",
+                        "mainUser" : false,
+                        "about" : "Hi! I'm a moto client",
+                        "username": "moto.origamitech"
+                    },
+                    "device": {
+                        "model" : "MOTO G (2014)",
+                        "serialNumber" : "abe03847ba34",
+                        "manufactureDate" : "2010-08-15",
+                        "inWarranty" : false
+                    },        
+                    "issues": [{
+                        "code": 1,
+                        "description": "Battery not charging"
+                    },
+                    {
+                        "code": 2,
+                        "description": "Broken display"
+                    },
+                    {
+                        "code": 3,
+                        "description": "Speaker out of order"
+                    }]
+                }]
+        }
+
++ Response 400 (application/json)
+        
+        {
+            "result" : {
+                "success" : false,   
+                "message" : "Error into request"
+            },
+            "data" : {
+            }
+        }
+
+
