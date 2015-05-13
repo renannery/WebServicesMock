@@ -1580,14 +1580,14 @@ User related resources of the **WebServices mock API V1**
                 "message" : ""
             },
             "data" : [{
-                "description":"Áudio",
+                "description":"Audio",
                 "code":1,
                 "issues":[{
-                        "description":"Aúdio Issue 1",
+                        "description":"Audio Issue 1",
                         "id": 1
                     },
                     {
-                        "description":"Aúdio Issue 2",
+                        "description":"Audio Issue 2",
                         "id": 2
                     }]
                 },
@@ -1639,4 +1639,72 @@ User related resources of the **WebServices mock API V1**
             }
         }
 
+## Parts [/v1/parts/list]
+### Dashboard [GET]
++ Response 200 (application/json)
+        
+        {
+            "result" : {
+                "success" : true,   
+                "message" : ""
+            },
+            "data" : [{
+                "description":"Audio",
+                "code":1,
+                "issues":[{
+                        "description":"Audio Part 1",
+                        "id": 1
+                    },
+                    {
+                        "description":"Audio Part 2",
+                        "id": 2
+                    }]
+                },
+                {
+                "description":"Battery",
+                "code":2,
+                "issues":[{
+                        "description":"Batery Part 1",
+                        "id": 3
+                    },
+                    {
+                        "description":"Batery Part 2",
+                        "id": 4
+                    }]
+                },
+                {
+                "description":"Screen",
+                    "code":3,
+                    "issues":[{
+                        "description":"Screen Part 1",
+                        "id": 5
+                    },
+                    {
+                        "description":"Screen Part 2",
+                        "id": 6
+                    }]
+                },
+                {
+                "description":"Software",
+                    "code":4,
+                    "issues":[{
+                        "description":"Software Part 1",
+                        "id": 7
+                    },
+                    {
+                        "description":"Software Part 2",
+                        "id": 8
+                    }]
+                }]
+        }
++ Response 400 (application/json)
+
+         {
+            "result" : {
+                "success" : false,   
+                "message" : "Error into request"
+            },
+            "data" : {
+            }
+        }
 
