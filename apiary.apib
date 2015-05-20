@@ -1768,3 +1768,87 @@ User related resources of the **WebServices mock API V1**
             }
         }
 
+## Notifications [/v1/users/{id}/notifications]
+### Dashboard [GET]
++ Response 200 (application/json)
+        
+        {
+            "result" : {
+                "success" : true,   
+                "message" : ""
+            },
+            "data" : [{
+                "id":1,
+                "type":2,
+                "description":"Audio",
+                "subDescription":"subDescription",
+                "objectGenericId":"objectGenericId",
+                "user" : {
+                        "id" : 9875,
+                        "type" : 2,
+                        "typeDescription" : "client",
+                        "firstName": "Abbie",
+                        "lastName": "Lane",
+                        "photo": "portraits/med/women/84.jpg",
+                        "gender" : 1,
+                        "email" : "mototech@origamitech.com.br",
+                        "phone" : "+55 11 98272-1828",
+                        "mainUser" : false,
+                        "about" : "Hi! I'm a moto client",
+                        "username": "moto.origamitech"
+                }
+            },
+            {
+                "id":2,
+                "type":1,
+                "description":"Audio",
+                "subDescription":"subDescription",
+                "objectGenericId":"objectGenericId",
+                "user" : {
+                        "id" : 9871,
+                        "type" : 2,
+                        "typeDescription" : "client",
+                        "firstName": "Vicent",
+                        "lastName": "Matt",
+                        "photo": "portraits/med/men/53.jpg",
+                        "gender" : 1,
+                        "email" : "mototech@origamitech.com.br",
+                        "phone" : "+55 11 98272-1828",
+                        "mainUser" : false,
+                        "about" : "Hi! I'm a moto client",
+                        "username": "moto.origamitech"
+                }
+            },
+            {
+                "id":3,
+                "type":3,
+                "description":"Audio",
+                "subDescription":"subDescription",
+                "objectGenericId":"objectGenericId",
+                "user" : {
+                        "id" : 9874,
+                        "type" : 2,
+                        "typeDescription" : "client",
+                        "firstName": "Dylan",
+                        "lastName": "Long",
+                        "photo": "portraits/med/men/85.jpg",
+                        "gender" : 1,
+                        "email" : "mototech@origamitech.com.br",
+                        "phone" : "+55 11 98272-1828",
+                        "mainUser" : false,
+                        "about" : "Hi! I'm a moto client",
+                        "username": "moto.origamitech"
+                }
+            }]
+        }
++ Response 400 (application/json)
+
+         {
+            "result" : {
+                "success" : false,   
+                "message" : "Error to request notification"
+            },
+            "data" : {
+            }
+        }
+
