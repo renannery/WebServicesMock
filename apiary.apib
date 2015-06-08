@@ -1010,6 +1010,126 @@ User related resources of the **WebServices mock API V1**
             }
         }
 
+## User received requests [/v1/users/{id}/appointments]
+### Received Requests [GET]
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the User to perform action with. Has example value.
+   
++ Response 200 (application/json)
+
+        {
+            "result" : {
+                "success" : true,
+                "message" : ""
+            },
+            "data" : [{
+                    "appointmentCode" : "1",
+                    "user" : {
+                        "id" : 121,
+                        "type" : 2,
+                        "typeDescription" : "client",
+                        "firstName": "mark",
+                        "lastName": "howard",
+                        "photo": "portraits/med/men/55.jpg",
+                        "gender" : 1,
+                        "email": "mark.howard35@example.com",
+                        "phone" : "0741-994-23",
+                        "mainUser" : false,
+                        "about" : "Hi! I'm a moto client",
+                        "username": "whiteswan74"
+                    },
+                    "device": {
+                         "model" : "MOTO X",
+                        "serialNumber" : "80528c008105b2df",
+                        "manufactureDate" : "2010-08-15",
+                        "inWarranty" : false
+                    },        
+                    "issues": [{
+                        "code": 1,
+                        "description": "Battery not charging"
+                    },
+                    {
+                        "code": 2,
+                        "description": "Broken display"
+                    },
+                    {
+                        "code": 3,
+                        "description": "Speaker out of order"
+                    }],        
+                    "appointmentStatus" : "pending",
+                    "scheduling" : {
+                        "location": {
+                                "street": "R. Cônego Eugênio Leite, 800",
+                                "city": "São Paulo",
+                                "state": "São Paulo",
+                                "zip": "05414-001",
+                                "latitude": -23.5620037,
+                                "longitude":  -46.6814347,
+                                "referencePoint" : "",
+                                "distance": 1.2
+                        },
+                        "dateTime": "2015-04-01T08:41:51+00:00Z"
+                    },
+                    "complement" : "Minha bateria parou de carregar",
+                    "distance" : ""
+                },
+                {
+                    "appointmentCode" : "8",
+                    "user" : {
+                        "id" : 129,
+                        "type" : 2,
+                        "typeDescription" : "client",
+                        "firstName": "alice",
+                        "lastName": "simmmons",
+                        "photo": "portraits/med/women/33.jpg",
+                        "gender" : 1,
+                        "email": "alice.simmmons85@example.com",
+                        "phone": "(827)-257-9630",
+                        "mainUser" : false,
+                        "about" : "Hi! I'm a moto client",
+                        "username": "orangefrog345"
+                    },
+                    "device": {
+                        "model" : "MOTO X 2nd Gen",
+                        "serialNumber" : "721178cc25573580",
+                        "manufactureDate" : "2014-07-03",
+                        "inWarranty" : false
+                    },        
+                    "issues": [{
+                        "code": 1,
+                        "description": "Battery not charging"
+                    }],        
+                    "appointmentStatus" : "accepted",
+                    "scheduling" : {
+                        "location": {
+                                "street": "R. dos Macunis, 427",
+                                "city": "São Paulo",
+                                "state": "São Paulo",
+                                "zip": "05444-001",
+                                "latitude": -23.557138,
+                                "longitude": -46.698162,
+                                "referencePoint" : "",
+                                "distance": 1.2
+                        },
+                        "dateTime": "2015-04-01T08:41:51+00:00Z"
+                    },
+                    "complement" : "Minha bateria parou de carregar",
+                    "distance" : ""
+                }
+            ]
+        }
+
++ Response 400 (application/json)
+        
+        {
+            "result" : {
+                "success" : false,   
+                "message" : "Error into request"
+            },
+            "data" : {
+            }
+        }
+
 ## User received requests [/v1/users/{id}/appointments{?lat,lng,distance}]
 ### Received Requests [GET]
 + Parameters
@@ -1131,6 +1251,8 @@ User related resources of the **WebServices mock API V1**
             "data" : {
             }
         }
+
+
 
 ## User Opened Services [/v1/users/{id}/openedServices]
 ### Opened Services [GET]
