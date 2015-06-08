@@ -543,7 +543,7 @@ User related resources of the **WebServices mock API V1**
         }
 
 
-## User received requests [/v1/users/{id}/appointments]
+## User received requests [/v1/users/{id}/requests]
 ### Received Requests [GET]
 + Parameters
     + id (required, number, `1`) ... Numeric `id` of the User to perform action with. Has example value.
@@ -556,7 +556,7 @@ User related resources of the **WebServices mock API V1**
                 "message" : ""
             },
             "data" : [{
-                    "appointmentCode" : "1",
+                    "id" : "1",
                     "user" : {
                         "id" : 121,
                         "type" : 2,
@@ -589,9 +589,12 @@ User related resources of the **WebServices mock API V1**
                         "code": 3,
                         "description": "Speaker out of order"
                     }],        
-                    "appointmentStatus" : "pending",
-                    "scheduling" : {
-                        "location": {
+                    
+                    "appointment" : {
+                        "id" : "1",
+                        "status" : "pending",
+                        "scheduling" : {
+                            "location": {
                                 "street": "R.Teodoro Sampaio, 758",
                                 "city": "São Paulo",
                                 "state": "São Paulo",
@@ -600,40 +603,45 @@ User related resources of the **WebServices mock API V1**
                                 "longitude": -46.677674,
                                 "referencePoint" : "",
                                 "distance": 1.2
+                            },
+                            "dateTime": "2015-04-01T08:41:51+00:00Z"
                         },
-                        "dateTime": "2015-04-01T08:41:51+00:00Z"
+                        "complement" : "Minha bateria parou de carregar",
                     },
-                    "complement" : "Minha bateria parou de carregar",
+                    
                     "distance" : ""
                 },
                 {
-                    "appointmentCode" : "2",
+                    "id" : "2",
                     "user" : {
-                        "id" : 124,
+                        "id" : 121,
                         "type" : 2,
                         "typeDescription" : "client",
-                        "firstName": "william",
-                        "lastName": "lowe",
-                        "photo": "portraits/med/men/16.jpg",
+                        "firstName": "mark",
+                        "lastName": "howard",
+                        "photo": "portraits/med/men/55.jpg",
                         "gender" : 1,
-                        "email": "william.lowe46@example.com",
-                        "phone" : "0763-530-575",
+                        "email": "mark.howard35@example.com",
+                        "phone" : "0741-994-23",
                         "mainUser" : false,
                         "about" : "Hi! I'm a moto client",
-                        "username": "brownswan28"
+                        "username": "whiteswan74"
                     },
-                    "device": {
+                   "device": {
                         "model" : "MOTO MAXX",
                         "serialNumber" : "d7f6d409bc2c4968",
                         "manufactureDate" : "2012-04-27",
                         "inWarranty" : true
-                    },        
+                    },         
                     "issues": [{
                         "code": 2,
                         "description": "Broken display"
-                    }],        
-                    "appointmentStatus" : "pending",
-                    "scheduling" : {
+                    }],     
+                    
+                    "appointment" : {
+                        "id" : "2",
+                        "status" : "pending",
+                        "scheduling" : {
                         "location": {
                                 "street": "R. José Augusto Penteado, 45",
                                 "city": "São Paulo",
@@ -642,16 +650,17 @@ User related resources of the **WebServices mock API V1**
                                 "latitude": -23.5463084,
                                 "longitude": -46.6903029,
                                 "referencePoint" : "",
-                                "distance": 1.2
-                                
+                                "distance": 1.2                                
+                            },
+                            "dateTime": "2015-04-01T08:41:51+00:00Z"
                         },
-                        "dateTime": "2015-04-01T08:41:51+00:00Z"
+                        "complement" : "Minha bateria parou de carregar",
                     },
-                    "complement" : "Minha bateria parou de carregar",
+                    
                     "distance" : ""
                 },
                 {
-                    "appointmentCode" : "3",
+                    "id" : "3",
                     "user" : {
                         "id" : 123,
                         "type" : 2,
@@ -671,30 +680,35 @@ User related resources of the **WebServices mock API V1**
                         "serialNumber" : "7df410b9bd8f9a17",
                         "manufactureDate" : "2014-03-05",
                         "inWarranty" : false
-                    },        
+                    },     
                     "issues": [{
                         "code": 3,
                         "description": "Speaker out of order"
-                    }],        
-                    "appointmentStatus" : "accepted",
-                    "scheduling" : {
-                        "location": {
-                               "street": "R. Natingui, 901",
-                                "city": "São Paulo",
-                                "state": "São Paulo",
-                                "zip": "05443-001",
-                                "latitude": -23.5546037,
-                                "longitude": -46.696664,
-                                "referencePoint" : "",
-                                "distance": 1.2
+                    }],     
+                    
+                    "appointment" : {
+                        "id" : "3",
+                        "status" : "accepted",
+                         "scheduling" : {
+                            "location": {
+                                   "street": "R. Natingui, 901",
+                                    "city": "São Paulo",
+                                    "state": "São Paulo",
+                                    "zip": "05443-001",
+                                    "latitude": -23.5546037,
+                                    "longitude": -46.696664,
+                                    "referencePoint" : "",
+                                    "distance": 1.2
+                            },
+                            "dateTime": "2015-05-31T12:41:51+00:00Z"
                         },
-                        "dateTime": "2015-05-31T12:41:51+00:00Z"
+                        "complement" : "Minha bateria parou de carregar",
                     },
-                    "complement" : "Minha bateria parou de carregar",
+                    
                     "distance" : ""
                 },
                 {
-                    "appointmentCode" : "4",
+                    "id" : "4",
                     "user" : {
                         "id" : 125,
                         "type" : 2,
@@ -718,9 +732,11 @@ User related resources of the **WebServices mock API V1**
                     "issues": [{
                         "code": 1,
                         "description": "Battery not charging"
-                    }],        
-                    "appointmentStatus" : "pending",
-                    "scheduling" : {
+                    }], 
+                    "appointment" : {
+                        "id" : "4",
+                        "status" : "pending",
+                        "scheduling" : {
                         "location": {
                                 "street": "R. Prof. Guilherme Milward, 396",
                                 "city": "São Paulo",
@@ -730,14 +746,16 @@ User related resources of the **WebServices mock API V1**
                                 "longitude": -46.7104378,
                                 "referencePoint" : "",
                                 "distance": 1.2
+                            },
+                            "dateTime": "2015-04-01T08:41:51+00:00Z"
                         },
-                        "dateTime": "2015-04-01T08:41:51+00:00Z"
+                        "complement" : "Minha bateria parou de carregar",
                     },
-                    "complement" : "Minha bateria parou de carregar",
+                    
                     "distance" : ""
                 },
                 {
-                    "appointmentCode" : "5",
+                    "id" : "5",
                     "user" : {
                         "id" : 126,
                         "type" : 2,
@@ -761,10 +779,12 @@ User related resources of the **WebServices mock API V1**
                     "issues": [{
                         "code": 1,
                         "description": "Battery not charging"
-                    }],        
-                    "appointmentStatus" : "accepted",
-                    "scheduling" : {
-                        "location": {
+                    }],     
+                    "appointment" : {
+                        "id" : "5",
+                        "status" : "accepted",
+                        "scheduling" : {
+                            "location": {
                                 "street": "R. Ferreira de Araújo, 653",
                                 "city": "São Paulo",
                                 "state": "São Paulo",
@@ -773,14 +793,16 @@ User related resources of the **WebServices mock API V1**
                                 "longitude": -46.697885,
                                 "referencePoint" : "",
                                 "distance": 1.2
+                            },
+                            "dateTime": "2015-04-01T08:41:51+00:00Z"
                         },
-                        "dateTime": "2015-04-01T08:41:51+00:00Z"
+                        "complement" : "Minha bateria parou de carregar",
                     },
-                    "complement" : "Minha bateria parou de carregar",
+                    
                     "distance" : ""
                 },
                 {
-                    "appointmentCode" : "6",
+                    "id" : "6",
                     "user" : {
                         "id" : 127,
                         "type" : 2,
@@ -805,8 +827,10 @@ User related resources of the **WebServices mock API V1**
                         "code": 3,
                         "description": "Speaker out of order"
                     }],        
-                    "appointmentStatus" : "accepted",
-                    "scheduling" : {
+                    "appointment" : {
+                        "id" : "6",
+                        "status" : "accepted",
+                        "scheduling" : {
                         "location": {
                                 "street": "Av. Nove de Julho, 5224",
                                 "city": "São Paulo",
@@ -816,14 +840,16 @@ User related resources of the **WebServices mock API V1**
                                 "longitude": -46.6755598,
                                 "referencePoint" : "",
                                 "distance": 1.2
+                            },
+                            "dateTime": "2015-04-01T08:41:51+00:00Z"
                         },
-                        "dateTime": "2015-04-01T08:41:51+00:00Z"
+                        "complement" : "Minha bateria parou de carregar",
                     },
-                    "complement" : "Minha bateria parou de carregar",
+                    
                     "distance" : ""
                 },
                 {
-                    "appointmentCode" : "7",
+                    "id" : "7",
                     "user" : {
                         "id" : 128,
                         "type" : 2,
@@ -847,9 +873,11 @@ User related resources of the **WebServices mock API V1**
                     "issues": [{
                         "code": 1,
                         "description": "Battery not charging"
-                    }],        
-                    "appointmentStatus" : "accepted",
-                    "scheduling" : {
+                    }],       
+                    "appointment" : {
+                        "id" : "7",
+                        "status" : "accepted",
+                        "scheduling" : {
                         "location": {
                                 "street": "R. Maj. Sertório, 316",
                                 "city": "São Paulo",
@@ -859,14 +887,16 @@ User related resources of the **WebServices mock API V1**
                                 "longitude": -46.6478013,
                                 "referencePoint" : "",
                                 "distance": 1.2
+                            },
+                            "dateTime": "2015-04-01T08:41:51+00:00Z"
                         },
-                        "dateTime": "2015-04-01T08:41:51+00:00Z"
+                        "complement" : "Minha bateria parou de carregar",
                     },
-                    "complement" : "Minha bateria parou de carregar",
+                    
                     "distance" : ""
-                },
+                },                
                 {
-                    "appointmentCode" : "8",
+                    "id" : "8",
                     "user" : {
                         "id" : 129,
                         "type" : 2,
@@ -890,9 +920,11 @@ User related resources of the **WebServices mock API V1**
                     "issues": [{
                         "code": 1,
                         "description": "Battery not charging"
-                    }],        
-                    "appointmentStatus" : "accepted",
-                    "scheduling" : {
+                    }],   
+                    "appointment" : {
+                        "id" : "8",
+                        "status" : "accepted",
+                        "scheduling" : {
                         "location": {
                                 "street": "R. Me. Teodora, 259",
                                 "city": "São Paulo",
@@ -902,10 +934,12 @@ User related resources of the **WebServices mock API V1**
                                 "longitude": -46.660673,
                                 "referencePoint" : "",
                                 "distance": 1.2
+                            },
+                            "dateTime": "2015-04-01T08:41:51+00:00Z"
                         },
-                        "dateTime": "2015-04-01T08:41:51+00:00Z"
+                        "complement" : "Minha bateria parou de carregar",
                     },
-                    "complement" : "Minha bateria parou de carregar",
+                    
                     "distance" : ""
                 }]
         }
